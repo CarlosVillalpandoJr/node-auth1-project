@@ -9,4 +9,8 @@ configureMiddleware(server);
 
 server.use('/api', apiRouter)
 
+server.get('/', (req, res) => {
+    res.json({ message: 'Inital GET working' })
+})
+
 module.exports = server;
