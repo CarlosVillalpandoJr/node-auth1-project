@@ -20,7 +20,7 @@ router.post('/login', (req, res) => {
     Users.findBy({ username })
         .first()
         .then(user => {
-            if(user && bcrypt.compareSync(password, user.password)) {
+            if(user && bcrypt.compareSync(password, user.password)) { // real pass first, database hash second
                 console.log('db password', user.password)
                 console.log('login password', password)
                 res.status(200).json({ message: `Welcome ${user.username}` })
