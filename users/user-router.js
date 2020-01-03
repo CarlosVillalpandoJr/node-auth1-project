@@ -19,7 +19,7 @@ function restricted(req, res, next) {
 // grab a cookie 
 
 // make sure it is valid
-
+    console.log(req.session)
     if (req.session && req.session.user) {
     next();
     } else {

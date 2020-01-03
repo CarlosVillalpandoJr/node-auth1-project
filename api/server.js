@@ -21,7 +21,7 @@ const sessionConfig = {
 configureMiddleware(server);
 
 server.use(session(sessionConfig)); // makes available a req.session object
-server.use('/api', apiRouter)
+server.use('/api', apiRouter) 
 
 server.get('/', (req, res) => {
     res.json({ message: 'Inital GET working' })
